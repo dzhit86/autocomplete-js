@@ -2,7 +2,7 @@ Autocomplete('.location_name');
 
 function Autocomplete (selector) {
     let inputs = document.querySelectorAll(selector);
-    let placeIdField = document.getElementsByClassName("location_id");
+    let placeIdField = document.querySelector(".location_id");
     function ciSearch(what = '', where = '') {
       return where.toUpperCase().search(what.toUpperCase());
     }
@@ -45,13 +45,19 @@ function Autocomplete (selector) {
       function selectItem(index) {
         if(!listItems[index]) return false;
         input.value = listItems[index].innerText;
-        placeIdField.setAttribute("id", listItems[index].getAttribute("data-place-id"));
+        placeIdField.setAttribute("value", listItems[index].getAttribute("data-place-id"));
         setActive(false);
       }
       
-      let stringQuery = "";
-      input.addEventListener('input', (e) => {        
-        stringQuery += e.data;
+      let stringQuery;
+
+      input.addEventListener('input', (e) => {
+
+        if (inputs[0].value !== "") {
+          stringQuery = inputs[0].value;
+        } else {
+          stringQuery += e.data;
+        }
         let value = input.value;
         if(!value) return setActive(false);
   
