@@ -424,23 +424,23 @@ if ($('*').is('.section__editFormPhoneFooterBtn-change')) {
 }
 
 //cities autocomplete
-if ($('*').is('.section__loginInput-cities')) {
-    $(".section__loginInput-cities").autocomplete({
-        source: function (request, response) {
-            $.ajax({
-                url: "/autocomplete/?term=" + request.term,
-                dataType: "json",
-                data: {
-                    q: request.term
-                },
-                success: function (data) {
-                    response(data);
-                }
-            });
-        },
-        minLength: 2
-    });
-}
+// if ($('*').is('.section__loginInput-cities')) {
+//     $(".section__loginInput-cities").autocomplete({
+//         source: function (request, response) {
+//             $.ajax({
+//                 url: "/autocomplete/?term=" + request.term,
+//                 dataType: "json",
+//                 data: {
+//                     q: request.term
+//                 },
+//                 success: function (data) {
+//                     response(data);
+//                 }
+//             });
+//         },
+//         minLength: 2
+//     });
+// }
 /*
 //post an ad phone mask
 if ($('*').is('.section__postAnAd-step1')) {
