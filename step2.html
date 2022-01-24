@@ -223,7 +223,8 @@ Post An Ad - Step 2
                     </div>
                     <div class="section__detailsTextAndInput section__detailsTextAndInput-none">
                         <span class="section__detailsText">Location*</span>
-                        <input type="text" name="location" value="" class="section__loginInput section__loginInput-cities ui-autocomplete-input" placeholder="Start entering your location or postcode" required="" id="id_location" autocomplete="off">
+                        <input type="text" name="location" class="section__loginInput section__loginInput-cities ui-autocomplete-input" placeholder="Start entering your location or postcode" required="" id="location_name" autocomplete="off" value="London">
+                        <input type="hidden" name="location_id" id="location_id" value="">
                     </div>
                     <p class="section__loginTextWrapper section__loginTextWrapper-details">Type the area where you
                         provide your services
@@ -280,28 +281,30 @@ Post An Ad - Step 2
   <option value="Other">Other</option>
 
 </select>
-                    </div>
-                    <div class="section__editFormRow">
-                        <div class="section__detailsTextAndInput">
-                            <span class="section__detailsText">Incall price per hour</span>
-                            <input type="number" name="incall_1h_price" value="654" class="section__loginInput" inputmode="numeric" step="any" id="id_incall_1h_price">
-                            <span class="euro"></span>
-                        </div>
-                        <div class="section__detailsTextAndInput">
-                            <span class="section__detailsText">Outcall price per hour</span>
-                            <input type="number" name="outcall_1h_price" value="2345" class="section__loginInput" inputmode="numeric" step="any" id="id_outcall_1h_price">
-                            <span class="euro"></span>
-                        </div>
-                    </div>
+</div>
+    <div class="section__editFormRow" data-field-check="number">
+        <div class="section__detailsTextAndInput">
+            <span class="section__detailsText">Incall price per hour</span>
+            <input type="number" min="0" name="incall_1h_price" value="0" class="section__loginInput" inputmode="numeric" step="1" id="id_incall_1h_price">
+            <span class="euro"></span>
+        </div>
+        <div class="section__detailsTextAndInput">
+            <span class="section__detailsText">Outcall price per hour</span>
+            <input type="number" min="0" name="outcall_1h_price" value="0" class="section__loginInput" inputmode="numeric" step="1" id="id_outcall_1h_price">
+            <span class="euro"></span>
+        </div>
+    </div>
                     <span class="section__detailsText section__detailsText-edit">About</span>
-                    <textarea name="about" cols="40" rows="10" class="master__blockFormTextarea" placeholder="Tell us a little about yourself" required="" id="id_about">fdgsgHELLOOOO</textarea>
+                    <textarea name="about" cols="40" rows="10" maxlength="3500" class="master__blockFormTextarea" placeholder="Tell us a little about yourself" required="" id="id_about">asdasd</textarea>
                     <div class="master__blockFormBtnBlock">
                                 <span class="section__editFormTextareaText">Text only. Links aren't allowed inside this
                                     box.
                                 </span>
-                        <span class="master__blockFormBtnBlockSymbols">0 / 3500</span>
+                        <span class="master__blockFormBtnBlockSymbols"><span class="master__blockFormBtnBlockSymbols_length">0</span> / 3500</span>
                     </div>
                     <span class="section__editDelimiter"></span>
+
+                    <div data-field-check="checkbox">
                 
                     <span class="section__detailsText section__detailsText-edit">Therapeutic<span class="section__detailsText" style="float:right;">Extra fee</span></span>
 
@@ -576,6 +579,8 @@ Post An Ad - Step 2
                                 </div>
                         
                     </div>
+
+                </div>
                     <span class="section__editDelimiter"></span>
                     
                     <div class="section__editFormCheckboxes section__editFormCheckboxes-sex">
@@ -897,7 +902,12 @@ Post An Ad - Step 2
         </div>
     </div>
 </div>
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+    const autocompleteHandler = "handler.php";
+    const csrf = "";
+</script>
 <script src="static/js/script.js"></script>
+<script src="static/js/main.js"></script>
 </body>
 </html>

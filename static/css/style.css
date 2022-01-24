@@ -1899,7 +1899,16 @@ p.header__navLink.hover:hover ~ .header__navList {
 .master__blockFormBtn:hover {
     text-decoration: underline;
 }
-.master__blockFormBtnBlockSymbols {
+.master__blockFormTextarea {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    resize: none;
+    min-height: 3em;
+    height: auto;
+}
+.master__blockFormBtnBlockSymbols,
+.master__blockFormBtnBlockSymbols_length {
     margin-top: 6px;
     font-family: Archivo, sans-serif;
     font-style: normal;
@@ -2863,8 +2872,10 @@ p.header__navLink.hover:hover ~ .header__navList {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    min-width: 344px;
-    margin-left: -32px;
+    /* min-width: 344px; */
+    min-width: 260px;
+    /* margin-left: -32px; */
+    margin-left: 0;
     margin-top: 4px;
 }
 .section__editFormCheckboxesColumn {
@@ -4606,6 +4617,29 @@ input::-webkit-inner-spin-button {
     background-color:#f7a7a3;
     border-left:5px solid #8f130c;
 }
+.error-form {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 4px 10px;
+    background-color:#feeeee;
+    color: #be4546;    
+    font-size: .8em;
+    font-weight: bold;
+    font-family: "Arial";
+    line-height: 1em;
+}
+.error-form::before {
+    content: '';
+    position: relative;
+    top: 2px;
+    width: 16px;
+    height: 16px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='rgb(190,69,70)' viewBox='0 0 16 16'%3E%3Cpath d='M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z'%3E%3C/path%3E%3C/svg%3E");
+    display: inline-block;
+    margin-right: 5px;
+}
 
 .warning-alert{
     background-color:#ffd48a;
@@ -4892,10 +4926,10 @@ input::-webkit-inner-spin-button {
 /* Autocomplete Start */
 .autocomplete-wrap {
     position: relative;
-    width: 300px;
+    width: 280px;
   }  
   .autocomplete-input {
-    width: 100%;
+    width: 280px;
   }  
   .autocomplete-list {  
     position: absolute;
