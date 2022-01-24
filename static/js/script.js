@@ -1,8 +1,8 @@
-Autocomplete('#location_name');
+Autocomplete('.location_name');
 
 function Autocomplete (selector) {
     let inputs = document.querySelectorAll(selector);
-    let placeIdField = document.getElementById("location_id");
+    let placeIdField = document.getElementsByClassName("location_id");
     function ciSearch(what = '', where = '') {
       return where.toUpperCase().search(what.toUpperCase());
     }

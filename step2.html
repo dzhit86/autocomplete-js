@@ -223,8 +223,8 @@ Post An Ad - Step 2
                     </div>
                     <div class="section__detailsTextAndInput section__detailsTextAndInput-none">
                         <span class="section__detailsText">Location*</span>
-                        <input type="text" name="location" class="section__loginInput section__loginInput-cities ui-autocomplete-input" placeholder="Start entering your location or postcode" required="" id="location_name" autocomplete="off" value="London">
-                        <input type="hidden" name="location_id" id="location_id" value="">
+                        <input type="text" name="location" class="section__loginInput section__loginInput-cities ui-autocomplete-input location_name" placeholder="Start entering your location or postcode" required="" autocomplete="off" value="London">
+                        <input type="hidden" class="location_id" name="location_id" value="">
                     </div>
                     <p class="section__loginTextWrapper section__loginTextWrapper-details">Type the area where you
                         provide your services
@@ -908,6 +908,6 @@ Post An Ad - Step 2
     const csrf = "";
 </script>
 <script src="static/js/script.js"></script>
-<script src="static/js/main.js"></script>
+<!-- <script src="static/js/main.js"></script> -->
 </body>
 </html>
