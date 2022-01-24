@@ -44,7 +44,7 @@ function Autocomplete (selector) {
       }
       function selectItem(index) {
         if(!listItems[index]) return false;
-        //input.value = listItems[index].innerText;
+        input.value = listItems[index].innerText;
         input.setAttribute("value", listItems[index].innerText);
         placeIdField.setAttribute("value", listItems[index].getAttribute("data-place-id"));
         console.log(input.value)
