@@ -105,18 +105,18 @@ function Autocomplete (selector) {
       });
   
       input.addEventListener('keydown', e => {  
-        let keyCode = e.keyCode;  
-        if(keyCode === 40) { // arrow down
+        let key = e.key;  
+        if(key === 40) { // arrow down
           e.preventDefault();
           focusedItem++;
           focusItem(focusedItem);
-        } else if(keyCode === 38) { //arrow up
+        } else if(key === 38) { //arrow up
           e.preventDefault();
           if(focusedItem > 0) focusedItem--;
           focusItem(focusedItem);
-        } else if(keyCode === 27) { // escape
+        } else if(key === 27) { // escape
           setActive(false);
-        } else if(keyCode === 13) { // enter
+        } else if(key === 13) { // enter
           selectItem(focusedItem);
         }        
       });
@@ -270,3 +270,24 @@ function checkFields(formSelector) {
   }
 }
 checkFields(".section__editForm");
+
+// Ввод только цифр
+const input = document.getElementById('id_phone');
+
+input.addEventListener('keydown', function(event) {
+	// Разрешаем: backspace, delete, tab и escape
+	if ( event.key == "Delete" || event.key == "Backspace" || event.key == "Tab" || event.key == "Esc" ||
+		// Разрешаем: Ctrl+A
+		(event.key == "A" && event.ctrlKey === true) ||
+		// Разрешаем: home, end, влево, вправо
+		(event.key >= "End" && event.key <= "Arrow Right")) {
+		
+		// Ничего не делаем
+		return;
+	} else {
+		// Запрещаем все, кроме цифр на основной клавиатуре, а так же Num-клавиатуре
+		if ((event.key < "0" || event.key > "9") && (event.key < "Numpad 0" || event.key > "Numpad 9" )) {
+			event.preventDefault();
+		}
+	}
+});
