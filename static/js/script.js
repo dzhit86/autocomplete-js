@@ -47,7 +47,6 @@ function Autocomplete (selector) {
         input.value = listItems[index].innerText;
         input.setAttribute("value", listItems[index].innerText);
         placeIdField.setAttribute("value", listItems[index].getAttribute("data-place-id"));
-        console.log(input.value)
         setActive(false);
       }
       
@@ -164,116 +163,140 @@ function fixTextareaSize(textarea) {
   fixTextareaSize(textareaField);
 }()
 
+formValidate(".section__editForm");
+function formValidate(selector) {
+  const form = document.querySelector(selector);
+  const multiFields = form.querySelectorAll("[data-multifields]");
 
-// Проверка на заполненность одного из полей
-function checkFields(formSelector) {
-  const form = document.querySelector(formSelector);
-  const wrapInputs = form.querySelectorAll("[data-field-check]");
-
-  for (let i = 0; i < wrapInputs.length; i++) {
-    const item = wrapInputs[i];
-
-    if (item.getAttribute("data-field-check") === "number") {
-      const inputs = item.querySelectorAll("input[type='number']");
-      for (let j = 0; j < inputs.length; j++) {
-        const input = inputs[j];
-        setFieldClass(input);        
-        input.addEventListener("change", function(e){
-          setFieldClass(input)
-        });
-      }
-    }
-    if (item.getAttribute("data-field-check") === "checkbox") {
-      const inputs = item.querySelectorAll("input[type='checkbox']");
-      for (let j = 0; j < inputs.length; j++) {
-        const input = inputs[j];
-        setFieldClass(input);
-        input.addEventListener("change", function(e){
-          setFieldClass(input)
-        });
-      }
-    }
-  }
-
-  function setFieldClass(inp) {    
-    if (inp.getAttribute("type") === "number") {      
-      if (inp.value === "" || inp.value === "0" ) {
-        inp.classList.remove("check_field");
-      } else {
-        inp.classList.add("check_field");        
-      }
-    }
-    if (inp.getAttribute("type") === "checkbox") {
-      if (!inp.checked) {
-        inp.classList.remove("check_field");
-      } else {
-        inp.classList.add("check_field");
-      }
-    }
-  }
-
-  form.addEventListener("submit", e => {
-    
-    const numWrap = form.querySelectorAll("[data-field-check='number']");
-    const checkWrap = form.querySelectorAll("[data-field-check='checkbox']");
-    let numStat = false;
-    let checkStat = false;
-    for (let i = 0; i < numWrap.length; i++) {
-      const wrap = numWrap[i];
-      const elements = wrap.querySelectorAll(".check_field");
-      if (elements.length === 0) {
-        showError(wrap, "Please enter 1 hour rates");
-      } else {
-        numStat = true;
-        hideError(wrap);
-      }
-    }
-    for (let i = 0; i < checkWrap.length; i++) {
-      const wrap = checkWrap[i];
-      const elements = wrap.querySelectorAll(".check_field");
-      if (elements.length === 0) {
-        showError(wrap, "Select at least 1 service");
-      } else {
-       hideError(wrap);
-       checkStat = true;
-      }
-    }
-    if (numStat && checkStat) {
-      return true;
+  form.addEventListener("submit", formSend);
+  function formSend(e) {  
+    let error = checkInputs(form);
+    console.log(error)
+    if (error !== 0) {
+      e.preventDefault();    
     } else {
-      e.preventDefault();
+      return true;
     }
+  }
 
-  });
+  // Вешаем событие на инпуты мультиполей 
+  for (let index = 0; index < multiFields.length; index++) {
+    const element = multiFields[index];
+    const typeElement = element.getAttribute("data-multifields");
+    const inputs = element.querySelectorAll(`[type='${typeElement}']`);
+    for (let inp = 0; inp < inputs.length; inp++) {
+      const input = inputs[inp];
+      setFieldClass(input);
+      input.addEventListener("change", function(e){
+        setFieldClass(input);
+      });
+    }
+  }
 
-  function showError(field, text) {
-    field.style.position = "relative";
-    field.style.padding = "2px 2px 15px 2px";
-    field.style.marginBottom = "10px";
-    field.style.border = "1px solid #be4546";
+  function checkInputs(form) {
+    let errorInput = 0;
+    let formReqFields = form.querySelectorAll("._req");
+  
+    for (let index = 0; index < formReqFields.length; index++) {
+      const field = formReqFields[index];
+      formRemoveError(field);
+      if (!field.getAttribute("data-multifields")) {
+        if (field.querySelector("input")) {
+          let input = field.querySelector("input");
+          if (input.getAttribute("type") === "email") {
+            if (emailValidate(input)) {
+              formAddError(field);
+              errorInput++;
+            } 
+          } else if (input.getAttribute("type") === "checkbox" && input.checked === false) {
+            formAddError(field);
+            errorInput++;
+          } else if (input.getAttribute("type") !== "hidden" && input.value === "") {
+            formAddError(field);
+            errorInput++;
+          }
+        }
+        if (field.querySelector("textarea")) {
+          let textarea = field.querySelector("textarea");
+          if (textarea.value === "") {
+            formAddError(field);
+            errorInput++;
+          }
+        }
+        if (field.querySelector("select")) {
+          let select = field.querySelector("select");
+          if (select.value === "") {
+            formAddError(field);
+            errorInput++; 
+          }
+        }
+      } else {
+        if (!multifieldsValidate(field)) {
+          if (field.querySelectorAll("._select-input").length === 0) {            
+            errorInput++;
+            switch (field.getAttribute("data-multifields")) {
+              case "number": formAddError(field, "Please enter 1 hour rates");
+                break;
+              case "checkbox": formAddError(field, "Select at least 1 service");
+                break;
+              default: formAddError(field);
+                break;
+            }
+          }
+        }
+      }
+  
+    }
+    return errorInput;
+  }
+
+  function formAddError(field, message = "This field is required") {
+    field.classList.add("_input-error");
     const errorMessage = document.createElement("div");
-      errorMessage.className  = "error-form"
-      errorMessage.innerHTML = text;
-      if (!field.querySelector(".error-form")) {
+      errorMessage.className  = "_input-error__message"
+      errorMessage.innerHTML = message;
+      if (!field.querySelector("._input-error__message")) {
         field.append(errorMessage);
       }
-      field.querySelector(".error-form").scrollIntoView({block: "center", behavior: "smooth"});
+      field.querySelectorAll("._input-error__message")[0].scrollIntoView({block: "end", behavior: "smooth"});
   }
-  function hideError(field) {
-    field.style.padding = "0";
-    field.style.border = "";
-    field.style.marginBottom = "0";
-    const errorMessage = field.querySelector(".error-form");
+  function formRemoveError(field) {
+    field.classList.remove("_input-error");
+    const errorMessage = field.querySelector("._input-error__message");
     if (errorMessage) {
       errorMessage.remove();
     }
   }
+  function emailValidate(input) {
+    return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
+  }
+  function multifieldsValidate(field) {
+    if (field.querySelectorAll("._select-input").length === 0) {
+      return false;
+    }
+  }
+  // Меняем класс в зависимости от состояния инпута
+  function setFieldClass(inp) {    
+    if (inp.getAttribute("type") === "number") {      
+      if (inp.value === "" || inp.value === "0" ) {
+        inp.classList.remove("_select-input");
+      } else {
+        inp.classList.add("_select-input");        
+      }
+    }
+    if (inp.getAttribute("type") === "checkbox") {
+      if (!inp.checked) {
+        inp.classList.remove("_select-input");
+      } else {
+        inp.classList.add("_select-input");
+      }
+    }
+  }
 }
-checkFields(".section__editForm");
+
 
 // Ввод только цифр
 const input = document.getElementById('id_phone');
-
 input.addEventListener('keydown', function(event) {
 	// Разрешаем: backspace, delete, tab и escape
 	if ( event.key == "Delete" || event.key == "Backspace" || event.key == "Tab" || event.key == "Esc" ||

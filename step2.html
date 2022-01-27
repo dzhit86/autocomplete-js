@@ -206,391 +206,294 @@ Post An Ad - Step 2
                 </div>
                 <form action="/therapist/20493/create-therapist-details/" method="post" class="section__editForm section__postAnAd-step2">
                     <input type="hidden" name="csrfmiddlewaretoken" value="zLHbYfaAbsguwfcK8WBntOLkmycnRd9vFxNjpUS4VxrEAPdqogoGh5uomnZDDKpZ">
-                    <div class="section__detailsTextAndInput">
-                        <span class="section__detailsText">Name</span>
-                        <input type="text" name="name" value="test" class="section__loginInput" placeholder="Name" required="" id="id_name">
+                    <div class="section__detailsTextAndInput _req">
+                        <span class="section__detailsText">Name*</span>
+                        <input type="text" name="name" value="" class="section__loginInput" placeholder="Name" id="id_name">
                     </div>
-                    <div class="section__editFormPhoneBlock">
-                        <span class="section__detailsText">Phone</span>
+                    <div class="section__editFormPhoneBlock _req">
+                        <span class="section__detailsText">Phone*</span>
                         <div class="section__editFormPhoneRow">
-                            <span class="section__detailsText section__postAnAdPhoneSpan">Phone</span>
-                            <p class="section__editFormPhoneText">+44 (0)
-                                <span class="section__editFormPhoneTextSpan">7911-123-456</span>
-                            </p>
-
-                            <input type="text" name="phone" value="1234556677" class="section__loginInput section__editFormPhoneRowInput" inputmode="numeric" placeholder="Enter phone" required="" id="id_phone">
+                            <span class="section__detailsText section__postAnAdPhoneSpan">Phone*</span>
+                            <p class="section__editFormPhoneText">+44 (0)<span class="section__editFormPhoneTextSpan"></span></p>
+                            <input type="text" name="phone" value="" class="section__loginInput section__editFormPhoneRowInput" inputmode="numeric" placeholder="Enter phone" id="id_phone">
                         </div>
                     </div>
-                    <div class="section__detailsTextAndInput section__detailsTextAndInput-none">
+                    <div class="section__detailsTextAndInput section__detailsTextAndInput-none _req">
                         <span class="section__detailsText">Location*</span>
-                        <input type="text" name="location" class="section__loginInput section__loginInput-cities ui-autocomplete-input location_name" placeholder="Start entering your location or postcode" required="" autocomplete="off" value="London">
+                        <input type="text" name="location" class="section__loginInput section__loginInput-cities ui-autocomplete-input location_name" placeholder="Start entering your location or postcode" autocomplete="off" value="">
                         <input type="hidden" class="location_id" name="location_id" value="">
                     </div>
-                    <p class="section__loginTextWrapper section__loginTextWrapper-details">Type the area where you
-                        provide your services
-                    </p>
-                    <div class="section__detailsTextAndInput">
+                    <p class="section__loginTextWrapper section__loginTextWrapper-details">Type the area where you provide your services</p>
+                    <div class="section__detailsTextAndInput _req">
                         <span class="section__detailsText">Gender*</span>
-                        <select name="gender" class="section__loginInput section__loginInput-select" required="" id="id_gender">
-  <option value="">Your gender</option>
-
-  <option value="Female" selected="selected">Female</option>
-
-  <option value="Male">Male</option>
-
-</select>
+                        <select name="gender" class="section__loginInput section__loginInput-select" id="id_gender">
+                            <option value="" selected="selected">Your gender</option>
+                            <option value="Female">Female</option>
+                            <option value="Male">Male</option>
+                        </select>
                     </div>
-                    <div class="section__detailsTextAndInput">
+                    <div class="section__detailsTextAndInput _req">
                         <span class="section__detailsText">Age*</span>
-                        <select name="age" class="section__loginInput section__loginInput-select" required="" id="id_age">
-  <option value="">Your age range</option>
-
-  <option value="18-24">18-24</option>
-
-  <option value="25-34">25-34</option>
-
-  <option value="35-44">35-44</option>
-
-  <option value="45-54">45-54</option>
-
-  <option value="55-64" selected="selected">55-64</option>
-
-  <option value="65+">65+</option>
-
-</select>
+                        <select name="age" class="section__loginInput section__loginInput-select" id="id_age">
+                            <option value="" selected="selected">Your age range</option>
+                            <option value="18-24">18-24</option>
+                            <option value="25-34">25-34</option>
+                            <option value="35-44">35-44</option>
+                            <option value="45-54">45-54</option>
+                            <option value="55-64">55-64</option>
+                            <option value="65+">65+</option>
+                        </select>
                     </div>
-                    <div class="section__detailsTextAndInput">
+                    <div class="section__detailsTextAndInput _req">
                         <span class="section__detailsText">Ethinicity*</span>
-                        <select name="ethnicity" class="section__loginInput section__loginInput-select" required="" id="id_ethnicity">
-  <option value="">Your ethnicity</option>
-
-  <option value="Arabian">Arabian</option>
-
-  <option value="Asian">Asian</option>
-
-  <option value="African/caribbean">African/Caribbean</option>
-
-  <option value="Caucasian">Caucasian</option>
-
-  <option value="Indian">Indian</option>
-
-  <option value="Latin">Latina/o</option>
-
-  <option value="Mixed" selected="selected">Mixed</option>
-
-  <option value="Other">Other</option>
-
-</select>
-</div>
-    <div class="section__editFormRow" data-field-check="number">
-        <div class="section__detailsTextAndInput">
-            <span class="section__detailsText">Incall price per hour</span>
-            <input type="number" min="0" name="incall_1h_price" value="0" class="section__loginInput" inputmode="numeric" step="1" id="id_incall_1h_price">
-            <span class="euro"></span>
-        </div>
-        <div class="section__detailsTextAndInput">
-            <span class="section__detailsText">Outcall price per hour</span>
-            <input type="number" min="0" name="outcall_1h_price" value="0" class="section__loginInput" inputmode="numeric" step="1" id="id_outcall_1h_price">
-            <span class="euro"></span>
-        </div>
-    </div>
-                    <span class="section__detailsText section__detailsText-edit">About</span>
-                    <textarea name="about" cols="40" rows="10" maxlength="3500" class="master__blockFormTextarea" placeholder="Tell us a little about yourself" required="" id="id_about">asdasd</textarea>
-                    <div class="master__blockFormBtnBlock">
-                                <span class="section__editFormTextareaText">Text only. Links aren't allowed inside this
-                                    box.
-                                </span>
-                        <span class="master__blockFormBtnBlockSymbols"><span class="master__blockFormBtnBlockSymbols_length">0</span> / 3500</span>
+                        <select name="ethnicity" class="section__loginInput section__loginInput-select" id="id_ethnicity">
+                            <option value="" selected="selected">Your ethnicity</option>
+                            <option value="Arabian">Arabian</option>
+                            <option value="Asian">Asian</option>
+                            <option value="African/caribbean">African/Caribbean</option>
+                            <option value="Caucasian">Caucasian</option>
+                            <option value="Indian">Indian</option>
+                            <option value="Latin">Latina/o</option>
+                            <option value="Mixed">Mixed</option>
+                            <option value="Other">Other</option>
+                        </select>
                     </div>
-                    <span class="section__editDelimiter"></span>
 
-                    <div data-field-check="checkbox">
-                
-                    <span class="section__detailsText section__detailsText-edit">Therapeutic<span class="section__detailsText" style="float:right;">Extra fee</span></span>
+                    <div class="section__editFormRow _req" data-multifields="number">
+                        <div class="section__detailsTextAndInput">
+                            <span class="section__detailsText">Incall price per hour</span>
+                            <input type="number" min="0" name="incall_1h_price" value="0" class="section__loginInput" inputmode="numeric" step="1" id="id_incall_1h_price">
+                            <span class="euro"></span>
+                        </div>
+                        <div class="section__detailsTextAndInput">
+                            <span class="section__detailsText">Outcall price per hour</span>
+                            <input type="number" min="0" name="outcall_1h_price" value="0" class="section__loginInput" inputmode="numeric" step="1" id="id_outcall_1h_price">
+                            <span class="euro"></span>
+                        </div>
+                    </div>
 
-                    <div class="section__editFormCheckboxes">
-                        
-                                <div class="section__detailsCheckboxBlock">
-                                
-                                    <input type="checkbox" class="section__detailsCheckbox" onclick="disableEnableInput('deep-tissue-massage-extra');" name="services" id="deep-tissue-massage" value="deep-tissue-massage">
-                                    <label for="deep-tissue-massage">Deep Tissue Massage</label>
-                                    <div class="section__extraFeeInputBox">
-                                        <input type="number" name="deep-tissue-massage-extra" class="section__extraFeeInputDisabled" disabled="disabled" inputmode="numeric" id="deep-tissue-massage-extra">
-                                    </div>
-                                
-                                </div>
-                        
-                                <div class="section__detailsCheckboxBlock">
-                                
-                                    <input type="checkbox" class="section__detailsCheckbox" onclick="disableEnableInput('sports-massage-extra');" name="services" id="sports-massage" value="sports-massage">
-                                    <label for="sports-massage">Sports Massage</label>
-                                    <div class="section__extraFeeInputBox">
-                                        <input type="number" name="sports-massage-extra" class="section__extraFeeInputDisabled" disabled="disabled" inputmode="numeric" id="sports-massage-extra">
-                                    </div>
-                                
-                                </div>
-                        
-                                <div class="section__detailsCheckboxBlock">
-                                
-                                    <input type="checkbox" class="section__detailsCheckbox" onclick="disableEnableInput('pregnancy-massage-extra');" name="services" id="pregnancy-massage" value="pregnancy-massage">
-                                    <label for="pregnancy-massage">Pregnancy Massage</label>
-                                    <div class="section__extraFeeInputBox">
-                                        <input type="number" name="pregnancy-massage-extra" class="section__extraFeeInputDisabled" disabled="disabled" inputmode="numeric" id="pregnancy-massage-extra">
-                                    </div>
-                                
-                                </div>
-                        
-                                <div class="section__detailsCheckboxBlock">
-                                
-                                    <input type="checkbox" class="section__detailsCheckbox" onclick="disableEnableInput('trigger-points-massage-extra');" name="services" id="trigger-points-massage" value="trigger-points-massage">
-                                    <label for="trigger-points-massage">Trigger Points Massage</label>
-                                    <div class="section__extraFeeInputBox">
-                                        <input type="number" name="trigger-points-massage-extra" class="section__extraFeeInputDisabled" disabled="disabled" inputmode="numeric" id="trigger-points-massage-extra">
-                                    </div>
-                                
-                                </div>
-                        
-                                <div class="section__detailsCheckboxBlock">
-                                
-                                    <input type="checkbox" class="section__detailsCheckbox" onclick="disableEnableInput('therapeutic-massage-extra');" name="services" id="therapeutic-massage" value="therapeutic-massage">
-                                    <label for="therapeutic-massage">Therapeutic Massage</label>
-                                    <div class="section__extraFeeInputBox">
-                                        <input type="number" name="therapeutic-massage-extra" class="section__extraFeeInputDisabled" disabled="disabled" inputmode="numeric" id="therapeutic-massage-extra">
-                                    </div>
-                                
-                                </div>
-                        
-                                <div class="section__detailsCheckboxBlock">
-                                
-                                    <input type="checkbox" class="section__detailsCheckbox" onclick="disableEnableInput('remedial-massage-extra');" name="services" id="remedial-massage" value="remedial-massage">
-                                    <label for="remedial-massage">Remedial massage</label>
-                                    <div class="section__extraFeeInputBox">
-                                        <input type="number" name="remedial-massage-extra" class="section__extraFeeInputDisabled" disabled="disabled" inputmode="numeric" id="remedial-massage-extra">
-                                    </div>
-                                
-                                </div>
+                    <div class="_req">
+                        <span class="section__detailsText section__detailsText-edit">About*</span>
+                        <textarea name="about" cols="40" rows="10" maxlength="3500" class="master__blockFormTextarea" placeholder="Tell us a little about yourself" id="id_about"></textarea>
+                        <div class="master__blockFormBtnBlock">
+                            <span class="section__editFormTextareaText">Text only. Links aren't allowed inside this box.</span>
+                            <span class="master__blockFormBtnBlockSymbols"><span class="master__blockFormBtnBlockSymbols_length">0</span> / 3500</span>
+                        </div>
                         
                     </div>
-                    <span class="section__editDelimiter"></span>
+
+                    <div class="_req" data-multifields="checkbox">    
+                        <span class="section__editDelimiter"></span>            
+                        <span class="section__detailsText section__detailsText-edit">Therapeutic<span class="section__detailsText" style="float:right;">Extra fee</span></span>
+                        <div class="section__editFormCheckboxes">
+                            <div class="section__detailsCheckboxBlock">                                
+                                <input type="checkbox" class="section__detailsCheckbox" onclick="disableEnableInput('deep-tissue-massage-extra');" name="services" id="deep-tissue-massage" value="deep-tissue-massage">
+                                <label for="deep-tissue-massage">Deep Tissue Massage</label>
+                                <div class="section__extraFeeInputBox">
+                                    <input type="number" name="deep-tissue-massage-extra" class="section__extraFeeInputDisabled" disabled="disabled" inputmode="numeric" id="deep-tissue-massage-extra">
+                                </div>                               
+                            </div>                        
+                            <div class="section__detailsCheckboxBlock">                                
+                                <input type="checkbox" class="section__detailsCheckbox" onclick="disableEnableInput('sports-massage-extra');" name="services" id="sports-massage" value="sports-massage">
+                                <label for="sports-massage">Sports Massage</label>
+                                <div class="section__extraFeeInputBox">
+                                    <input type="number" name="sports-massage-extra" class="section__extraFeeInputDisabled" disabled="disabled" inputmode="numeric" id="sports-massage-extra">
+                                </div>                                
+                            </div>                        
+                            <div class="section__detailsCheckboxBlock">                                
+                                <input type="checkbox" class="section__detailsCheckbox" onclick="disableEnableInput('pregnancy-massage-extra');" name="services" id="pregnancy-massage" value="pregnancy-massage">
+                                <label for="pregnancy-massage">Pregnancy Massage</label>
+                                <div class="section__extraFeeInputBox">
+                                    <input type="number" name="pregnancy-massage-extra" class="section__extraFeeInputDisabled" disabled="disabled" inputmode="numeric" id="pregnancy-massage-extra">
+                                </div>                                
+                            </div>                        
+                            <div class="section__detailsCheckboxBlock">                                
+                                <input type="checkbox" class="section__detailsCheckbox" onclick="disableEnableInput('trigger-points-massage-extra');" name="services" id="trigger-points-massage" value="trigger-points-massage">
+                                <label for="trigger-points-massage">Trigger Points Massage</label>
+                                <div class="section__extraFeeInputBox">
+                                    <input type="number" name="trigger-points-massage-extra" class="section__extraFeeInputDisabled" disabled="disabled" inputmode="numeric" id="trigger-points-massage-extra">
+                                </div>                                
+                            </div>                        
+                            <div class="section__detailsCheckboxBlock">                                
+                                <input type="checkbox" class="section__detailsCheckbox" onclick="disableEnableInput('therapeutic-massage-extra');" name="services" id="therapeutic-massage" value="therapeutic-massage">
+                                <label for="therapeutic-massage">Therapeutic Massage</label>
+                                <div class="section__extraFeeInputBox">
+                                    <input type="number" name="therapeutic-massage-extra" class="section__extraFeeInputDisabled" disabled="disabled" inputmode="numeric" id="therapeutic-massage-extra">
+                                </div>                                
+                            </div>                        
+                            <div class="section__detailsCheckboxBlock">                                
+                                <input type="checkbox" class="section__detailsCheckbox" onclick="disableEnableInput('remedial-massage-extra');" name="services" id="remedial-massage" value="remedial-massage">
+                                <label for="remedial-massage">Remedial massage</label>
+                                <div class="section__extraFeeInputBox">
+                                    <input type="number" name="remedial-massage-extra" class="section__extraFeeInputDisabled" disabled="disabled" inputmode="numeric" id="remedial-massage-extra">
+                                </div>                                
+                            </div>                        
+                        </div>
+                        <span class="section__editDelimiter"></span>                    
+                        <span class="section__detailsText section__detailsText-edit">European<span class="section__detailsText" style="float:right;">Extra fee</span></span>
+                        <div class="section__editFormCheckboxes">                        
+                            <div class="section__detailsCheckboxBlock">                                
+                                <input type="checkbox" class="section__detailsCheckbox" onclick="disableEnableInput('swedish-massage-extra');" name="services" id="swedish-massage" value="swedish-massage">
+                                <label for="swedish-massage">Swedish Massage</label>
+                                <div class="section__extraFeeInputBox">
+                                    <input type="number" name="swedish-massage-extra" class="section__extraFeeInputDisabled" disabled="disabled" inputmode="numeric" id="swedish-massage-extra">
+                                </div>                                
+                            </div>
+                            
+                            <div class="section__detailsCheckboxBlock">                                
+                                <input type="checkbox" class="section__detailsCheckbox" onclick="disableEnableInput('holistic-massage-extra');" name="services" id="holistic-massage" value="holistic-massage">
+                                <label for="holistic-massage">Holistic Massage</label>
+                                <div class="section__extraFeeInputBox">
+                                    <input type="number" name="holistic-massage-extra" class="section__extraFeeInputDisabled" disabled="disabled" inputmode="numeric" id="holistic-massage-extra">
+                                </div>                                
+                            </div>                        
+                        </div>
+                        <span class="section__editDelimiter"></span>                    
+                        <span class="section__detailsText section__detailsText-edit">Asian<span class="section__detailsText" style="float:right;">Extra fee</span></span>
+                        <div class="section__editFormCheckboxes">                        
+                            <div class="section__detailsCheckboxBlock">                                
+                                <input type="checkbox" class="section__detailsCheckbox" onclick="disableEnableInput('thai-massage-extra');" name="services" id="thai-massage" value="thai-massage">
+                                <label for="thai-massage">Thai Massage</label>
+                                <div class="section__extraFeeInputBox">
+                                    <input type="number" name="thai-massage-extra" class="section__extraFeeInputDisabled" disabled="disabled" inputmode="numeric" id="thai-massage-extra">
+                                </div>                                
+                            </div>
+                            
+                            <div class="section__detailsCheckboxBlock">                                
+                                <input type="checkbox" class="section__detailsCheckbox" onclick="disableEnableInput('hot-stone-massage-extra');" name="services" id="hot-stone-massage" value="hot-stone-massage">
+                                <label for="hot-stone-massage">Hot Stone Massage</label>
+                                <div class="section__extraFeeInputBox">
+                                    <input type="number" name="hot-stone-massage-extra" class="section__extraFeeInputDisabled" disabled="disabled" inputmode="numeric" id="hot-stone-massage-extra">
+                                </div>                                
+                            </div>
+                            
+                            <div class="section__detailsCheckboxBlock">                                
+                                <input type="checkbox" class="section__detailsCheckbox" onclick="disableEnableInput('nuru-massage-extra');" name="services" id="nuru-massage" value="nuru-massage">
+                                <label for="nuru-massage">Nuru Massage</label>
+                                <div class="section__extraFeeInputBox">
+                                    <input type="number" name="nuru-massage-extra" class="section__extraFeeInputDisabled" disabled="disabled" inputmode="numeric" id="nuru-massage-extra">
+                                </div>                                
+                            </div>
+                            
+                            <div class="section__detailsCheckboxBlock">                                
+                                <input type="checkbox" class="section__detailsCheckbox" onclick="disableEnableInput('shiatsu-massage-extra');" name="services" id="shiatsu-massage" value="shiatsu-massage">
+                                <label for="shiatsu-massage">Shiatsu Massage</label>
+                                <div class="section__extraFeeInputBox">
+                                    <input type="number" name="shiatsu-massage-extra" class="section__extraFeeInputDisabled" disabled="disabled" inputmode="numeric" id="shiatsu-massage-extra">
+                                </div>                                
+                            </div>
+                            
+                            <div class="section__detailsCheckboxBlock">                                
+                                <input type="checkbox" class="section__detailsCheckbox" onclick="disableEnableInput('reflexology-massage-extra');" name="services" id="reflexology-massage" value="reflexology-massage">
+                                <label for="reflexology-massage">Reflexology Massage</label>
+                                <div class="section__extraFeeInputBox">
+                                    <input type="number" name="reflexology-massage-extra" class="section__extraFeeInputDisabled" disabled="disabled" inputmode="numeric" id="reflexology-massage-extra">
+                                </div>                                
+                            </div>
+                            
+                            <div class="section__detailsCheckboxBlock">                                
+                                <input type="checkbox" class="section__detailsCheckbox" onclick="disableEnableInput('ayurvedic-massage-extra');" name="services" id="ayurvedic-massage" value="ayurvedic-massage">
+                                <label for="ayurvedic-massage">Ayurvedic Massage</label>
+                                <div class="section__extraFeeInputBox">
+                                    <input type="number" name="ayurvedic-massage-extra" class="section__extraFeeInputDisabled" disabled="disabled" inputmode="numeric" id="ayurvedic-massage-extra">
+                                </div>                                
+                            </div>
+                            
+                            <div class="section__detailsCheckboxBlock">                                
+                                <input type="checkbox" class="section__detailsCheckbox" onclick="disableEnableInput('indian-head-massage-extra');" name="services" id="indian-head-massage" value="indian-head-massage">
+                                <label for="indian-head-massage">Indian Head Massage</label>
+                                <div class="section__extraFeeInputBox">
+                                    <input type="number" name="indian-head-massage-extra" class="section__extraFeeInputDisabled" disabled="disabled" inputmode="numeric" id="indian-head-massage-extra">
+                                </div>                                
+                            </div>                        
+                        </div>
+                        <span class="section__editDelimiter"></span>                    
+                        <span class="section__detailsText section__detailsText-edit">Relax<span class="section__detailsText" style="float:right;">Extra fee</span></span>
+                        <div class="section__editFormCheckboxes">                        
+                            <div class="section__detailsCheckboxBlock">                                
+                                <input type="checkbox" class="section__detailsCheckbox" onclick="disableEnableInput('aromatherapy-massage-extra');" name="services" id="aromatherapy-massage" value="aromatherapy-massage">
+                                <label for="aromatherapy-massage">Aromatherapy Massage</label>
+                                <div class="section__extraFeeInputBox">
+                                    <input type="number" name="aromatherapy-massage-extra" class="section__extraFeeInputDisabled" disabled="disabled" inputmode="numeric" id="aromatherapy-massage-extra">
+                                </div>                                
+                            </div>
                     
-                    <span class="section__detailsText section__detailsText-edit">European<span class="section__detailsText" style="float:right;">Extra fee</span></span>
-
-                    <div class="section__editFormCheckboxes">
-                        
-                                <div class="section__detailsCheckboxBlock">
-                                
-                                    <input type="checkbox" class="section__detailsCheckbox" onclick="disableEnableInput('swedish-massage-extra');" name="services" id="swedish-massage" value="swedish-massage">
-                                    <label for="swedish-massage">Swedish Massage</label>
-                                    <div class="section__extraFeeInputBox">
-                                        <input type="number" name="swedish-massage-extra" class="section__extraFeeInputDisabled" disabled="disabled" inputmode="numeric" id="swedish-massage-extra">
-                                    </div>
-                                
-                                </div>
-                        
-                                <div class="section__detailsCheckboxBlock">
-                                
-                                    <input type="checkbox" class="section__detailsCheckbox" onclick="disableEnableInput('holistic-massage-extra');" name="services" id="holistic-massage" value="holistic-massage">
-                                    <label for="holistic-massage">Holistic Massage</label>
-                                    <div class="section__extraFeeInputBox">
-                                        <input type="number" name="holistic-massage-extra" class="section__extraFeeInputDisabled" disabled="disabled" inputmode="numeric" id="holistic-massage-extra">
-                                    </div>
-                                
-                                </div>
-                        
-                    </div>
-                    <span class="section__editDelimiter"></span>
+                            <div class="section__detailsCheckboxBlock">                                
+                                <input type="checkbox" class="section__detailsCheckbox" onclick="disableEnableInput('hot-oil-massage-extra');" name="services" id="hot-oil-massage" value="hot-oil-massage">
+                                <label for="hot-oil-massage">Hot Oil Massage</label>
+                                <div class="section__extraFeeInputBox">
+                                    <input type="number" name="hot-oil-massage-extra" class="section__extraFeeInputDisabled" disabled="disabled" inputmode="numeric" id="hot-oil-massage-extra">
+                                </div>                                
+                            </div>
                     
-                    <span class="section__detailsText section__detailsText-edit">Asian<span class="section__detailsText" style="float:right;">Extra fee</span></span>
-
-                    <div class="section__editFormCheckboxes">
-                        
-                                <div class="section__detailsCheckboxBlock">
-                                
-                                    <input type="checkbox" class="section__detailsCheckbox" onclick="disableEnableInput('thai-massage-extra');" name="services" id="thai-massage" value="thai-massage">
-                                    <label for="thai-massage">Thai Massage</label>
-                                    <div class="section__extraFeeInputBox">
-                                        <input type="number" name="thai-massage-extra" class="section__extraFeeInputDisabled" disabled="disabled" inputmode="numeric" id="thai-massage-extra">
-                                    </div>
-                                
-                                </div>
-                        
-                                <div class="section__detailsCheckboxBlock">
-                                
-                                    <input type="checkbox" class="section__detailsCheckbox" onclick="disableEnableInput('hot-stone-massage-extra');" name="services" id="hot-stone-massage" value="hot-stone-massage">
-                                    <label for="hot-stone-massage">Hot Stone Massage</label>
-                                    <div class="section__extraFeeInputBox">
-                                        <input type="number" name="hot-stone-massage-extra" class="section__extraFeeInputDisabled" disabled="disabled" inputmode="numeric" id="hot-stone-massage-extra">
-                                    </div>
-                                
-                                </div>
-                        
-                                <div class="section__detailsCheckboxBlock">
-                                
-                                    <input type="checkbox" class="section__detailsCheckbox" onclick="disableEnableInput('nuru-massage-extra');" name="services" id="nuru-massage" value="nuru-massage">
-                                    <label for="nuru-massage">Nuru Massage</label>
-                                    <div class="section__extraFeeInputBox">
-                                        <input type="number" name="nuru-massage-extra" class="section__extraFeeInputDisabled" disabled="disabled" inputmode="numeric" id="nuru-massage-extra">
-                                    </div>
-                                
-                                </div>
-                        
-                                <div class="section__detailsCheckboxBlock">
-                                
-                                    <input type="checkbox" class="section__detailsCheckbox" onclick="disableEnableInput('shiatsu-massage-extra');" name="services" id="shiatsu-massage" value="shiatsu-massage">
-                                    <label for="shiatsu-massage">Shiatsu Massage</label>
-                                    <div class="section__extraFeeInputBox">
-                                        <input type="number" name="shiatsu-massage-extra" class="section__extraFeeInputDisabled" disabled="disabled" inputmode="numeric" id="shiatsu-massage-extra">
-                                    </div>
-                                
-                                </div>
-                        
-                                <div class="section__detailsCheckboxBlock">
-                                
-                                    <input type="checkbox" class="section__detailsCheckbox" onclick="disableEnableInput('reflexology-massage-extra');" name="services" id="reflexology-massage" value="reflexology-massage">
-                                    <label for="reflexology-massage">Reflexology Massage</label>
-                                    <div class="section__extraFeeInputBox">
-                                        <input type="number" name="reflexology-massage-extra" class="section__extraFeeInputDisabled" disabled="disabled" inputmode="numeric" id="reflexology-massage-extra">
-                                    </div>
-                                
-                                </div>
-                        
-                                <div class="section__detailsCheckboxBlock">
-                                
-                                    <input type="checkbox" class="section__detailsCheckbox" onclick="disableEnableInput('ayurvedic-massage-extra');" name="services" id="ayurvedic-massage" value="ayurvedic-massage">
-                                    <label for="ayurvedic-massage">Ayurvedic Massage</label>
-                                    <div class="section__extraFeeInputBox">
-                                        <input type="number" name="ayurvedic-massage-extra" class="section__extraFeeInputDisabled" disabled="disabled" inputmode="numeric" id="ayurvedic-massage-extra">
-                                    </div>
-                                
-                                </div>
-                        
-                                <div class="section__detailsCheckboxBlock">
-                                
-                                    <input type="checkbox" class="section__detailsCheckbox" onclick="disableEnableInput('indian-head-massage-extra');" name="services" id="indian-head-massage" value="indian-head-massage">
-                                    <label for="indian-head-massage">Indian Head Massage</label>
-                                    <div class="section__extraFeeInputBox">
-                                        <input type="number" name="indian-head-massage-extra" class="section__extraFeeInputDisabled" disabled="disabled" inputmode="numeric" id="indian-head-massage-extra">
-                                    </div>
-                                
-                                </div>
-                        
-                    </div>
-                    <span class="section__editDelimiter"></span>
+                            <div class="section__detailsCheckboxBlock">                                
+                                <input type="checkbox" class="section__detailsCheckbox" onclick="disableEnableInput('couples-massage-extra');" name="services" id="couples-massage" value="couples-massage">
+                                <label for="couples-massage">Couples Massage</label>
+                                <div class="section__extraFeeInputBox">
+                                    <input type="number" name="couples-massage-extra" class="section__extraFeeInputDisabled" disabled="disabled" inputmode="numeric" id="couples-massage-extra">
+                                </div>                                
+                            </div>
                     
-                    <span class="section__detailsText section__detailsText-edit">Relax<span class="section__detailsText" style="float:right;">Extra fee</span></span>
-
-                    <div class="section__editFormCheckboxes">
-                        
-                                <div class="section__detailsCheckboxBlock">
-                                
-                                    <input type="checkbox" class="section__detailsCheckbox" onclick="disableEnableInput('aromatherapy-massage-extra');" name="services" id="aromatherapy-massage" value="aromatherapy-massage">
-                                    <label for="aromatherapy-massage">Aromatherapy Massage</label>
-                                    <div class="section__extraFeeInputBox">
-                                        <input type="number" name="aromatherapy-massage-extra" class="section__extraFeeInputDisabled" disabled="disabled" inputmode="numeric" id="aromatherapy-massage-extra">
-                                    </div>
-                                
-                                </div>
-                        
-                                <div class="section__detailsCheckboxBlock">
-                                
-                                    <input type="checkbox" class="section__detailsCheckbox" onclick="disableEnableInput('hot-oil-massage-extra');" name="services" id="hot-oil-massage" value="hot-oil-massage">
-                                    <label for="hot-oil-massage">Hot Oil Massage</label>
-                                    <div class="section__extraFeeInputBox">
-                                        <input type="number" name="hot-oil-massage-extra" class="section__extraFeeInputDisabled" disabled="disabled" inputmode="numeric" id="hot-oil-massage-extra">
-                                    </div>
-                                
-                                </div>
-                        
-                                <div class="section__detailsCheckboxBlock">
-                                
-                                    <input type="checkbox" class="section__detailsCheckbox" onclick="disableEnableInput('couples-massage-extra');" name="services" id="couples-massage" value="couples-massage">
-                                    <label for="couples-massage">Couples Massage</label>
-                                    <div class="section__extraFeeInputBox">
-                                        <input type="number" name="couples-massage-extra" class="section__extraFeeInputDisabled" disabled="disabled" inputmode="numeric" id="couples-massage-extra">
-                                    </div>
-                                
-                                </div>
-                        
-                                <div class="section__detailsCheckboxBlock">
-                                
-                                    <input type="checkbox" class="section__detailsCheckbox" onclick="disableEnableInput('jet-lag-massage-extra');" name="services" id="jet-lag-massage" value="jet-lag-massage">
-                                    <label for="jet-lag-massage">Jet Lag Massage</label>
-                                    <div class="section__extraFeeInputBox">
-                                        <input type="number" name="jet-lag-massage-extra" class="section__extraFeeInputDisabled" disabled="disabled" inputmode="numeric" id="jet-lag-massage-extra">
-                                    </div>
-                                
-                                </div>
-                        
-                                <div class="section__detailsCheckboxBlock">
-                                
-                                    <input type="checkbox" class="section__detailsCheckbox" onclick="disableEnableInput('lomi-lomi-massage-extra');" name="services" id="lomi-lomi-massage" value="lomi-lomi-massage">
-                                    <label for="lomi-lomi-massage">Lomi Lomi Massage</label>
-                                    <div class="section__extraFeeInputBox">
-                                        <input type="number" name="lomi-lomi-massage-extra" class="section__extraFeeInputDisabled" disabled="disabled" inputmode="numeric" id="lomi-lomi-massage-extra">
-                                    </div>
-                                
-                                </div>
-                        
-                                <div class="section__detailsCheckboxBlock">
-                                
-                                    <input type="checkbox" class="section__detailsCheckbox" onclick="disableEnableInput('relaxing-massage-extra');" name="services" id="relaxing-massage" value="relaxing-massage" checked="checked">
-                                    <label for="relaxing-massage">Relaxing Massage</label>
-                                    <div class="section__extraFeeInputBox">
-                                        <input type="number" name="relaxing-massage-extra" class="section__extraFeeInputEnabled" inputmode="numeric" id="relaxing-massage-extra">
-                                    </div>
-                                
-                                </div>
-                        
-                                <div class="section__detailsCheckboxBlock">
-                                
-                                    <input type="checkbox" class="section__detailsCheckbox" onclick="disableEnableInput('4-hands-massage-extra');" name="services" id="4-hands-massage" value="4-hands-massage">
-                                    <label for="4-hands-massage">4 hands Massage</label>
-                                    <div class="section__extraFeeInputBox">
-                                        <input type="number" name="4-hands-massage-extra" class="section__extraFeeInputDisabled" disabled="disabled" inputmode="numeric" id="4-hands-massage-extra">
-                                    </div>
-                                
-                                </div>
-                        
-                                <div class="section__detailsCheckboxBlock">
-                                
-                                    <input type="checkbox" class="section__detailsCheckbox" onclick="disableEnableInput('back-massage-extra');" name="services" id="back-massage" value="back-massage">
-                                    <label for="back-massage">Back Massage</label>
-                                    <div class="section__extraFeeInputBox">
-                                        <input type="number" name="back-massage-extra" class="section__extraFeeInputDisabled" disabled="disabled" inputmode="numeric" id="back-massage-extra">
-                                    </div>
-                                
-                                </div>
-                        
-                    </div>
-                    <span class="section__editDelimiter"></span>
+                            <div class="section__detailsCheckboxBlock">                                
+                                <input type="checkbox" class="section__detailsCheckbox" onclick="disableEnableInput('jet-lag-massage-extra');" name="services" id="jet-lag-massage" value="jet-lag-massage">
+                                <label for="jet-lag-massage">Jet Lag Massage</label>
+                                <div class="section__extraFeeInputBox">
+                                    <input type="number" name="jet-lag-massage-extra" class="section__extraFeeInputDisabled" disabled="disabled" inputmode="numeric" id="jet-lag-massage-extra">
+                                </div>                                
+                            </div>
                     
-                    <span class="section__detailsText section__detailsText-edit">Other<span class="section__detailsText" style="float:right;">Extra fee</span></span>
-
-                    <div class="section__editFormCheckboxes">
-                        
-                                <div class="section__detailsCheckboxBlock">
-                                
-                                    <input type="checkbox" class="section__detailsCheckbox" onclick="disableEnableInput('massage-extra');" name="services" id="massage" value="massage">
-                                    <label for="massage">Massage</label>
-                                    <div class="section__extraFeeInputBox">
-                                        <input type="number" name="massage-extra" class="section__extraFeeInputDisabled" disabled="disabled" inputmode="numeric" id="massage-extra">
-                                    </div>
-                                
-                                </div>
-                        
-                    </div>
-
+                            <div class="section__detailsCheckboxBlock">                                
+                                <input type="checkbox" class="section__detailsCheckbox" onclick="disableEnableInput('lomi-lomi-massage-extra');" name="services" id="lomi-lomi-massage" value="lomi-lomi-massage">
+                                <label for="lomi-lomi-massage">Lomi Lomi Massage</label>
+                                <div class="section__extraFeeInputBox">
+                                    <input type="number" name="lomi-lomi-massage-extra" class="section__extraFeeInputDisabled" disabled="disabled" inputmode="numeric" id="lomi-lomi-massage-extra">
+                                </div>                                
+                            </div>
+                    
+                            <div class="section__detailsCheckboxBlock">                                
+                                <input type="checkbox" class="section__detailsCheckbox" onclick="disableEnableInput('relaxing-massage-extra');" name="services" id="relaxing-massage" value="relaxing-massage" checked="checked">
+                                <label for="relaxing-massage">Relaxing Massage</label>
+                                <div class="section__extraFeeInputBox">
+                                    <input type="number" name="relaxing-massage-extra" class="section__extraFeeInputEnabled" inputmode="numeric" id="relaxing-massage-extra">
+                                </div>                                
+                            </div>
+                    
+                            <div class="section__detailsCheckboxBlock">                                
+                                <input type="checkbox" class="section__detailsCheckbox" onclick="disableEnableInput('4-hands-massage-extra');" name="services" id="4-hands-massage" value="4-hands-massage">
+                                <label for="4-hands-massage">4 hands Massage</label>
+                                <div class="section__extraFeeInputBox">
+                                    <input type="number" name="4-hands-massage-extra" class="section__extraFeeInputDisabled" disabled="disabled" inputmode="numeric" id="4-hands-massage-extra">
+                                </div>                                
+                            </div>
+                    
+                            <div class="section__detailsCheckboxBlock">                                
+                                <input type="checkbox" class="section__detailsCheckbox" onclick="disableEnableInput('back-massage-extra');" name="services" id="back-massage" value="back-massage">
+                                <label for="back-massage">Back Massage</label>
+                                <div class="section__extraFeeInputBox">
+                                    <input type="number" name="back-massage-extra" class="section__extraFeeInputDisabled" disabled="disabled" inputmode="numeric" id="back-massage-extra">
+                                </div>                                
+                            </div>                        
+                        </div>
+                        <span class="section__editDelimiter"></span>                    
+                        <span class="section__detailsText section__detailsText-edit">Other<span class="section__detailsText" style="float:right;">Extra fee</span></span>
+                        <div class="section__editFormCheckboxes">                        
+                            <div class="section__detailsCheckboxBlock">                                
+                                <input type="checkbox" class="section__detailsCheckbox" onclick="disableEnableInput('massage-extra');" name="services" id="massage" value="massage">
+                                <label for="massage">Massage</label>
+                                <div class="section__extraFeeInputBox">
+                                    <input type="number" name="massage-extra" class="section__extraFeeInputDisabled" disabled="disabled" inputmode="numeric" id="massage-extra">
+                                </div>                                
+                            </div>                        
+                        </div>
                 </div>
-                    <span class="section__editDelimiter"></span>
-                    
+
+                    <span class="section__editDelimiter"></span>                    
                     <div class="section__editFormCheckboxes section__editFormCheckboxes-sex">
                         <div class="section__detailsCheckboxBlock">
                             <input type="checkbox" name="is_not_adult_service" class="section__detailsCheckbox" id="id_is_not_adult_service" checked="checked">
                             <label for="id_is_not_adult_service">I don't provide adult/sexual services</label>
                         </div>
-                        <span class="section__editFormTextareaText">if you tick the checkbox your ad will have the
-                                    mark “NOT SEXUAL SEVICE”
-                                </span>
+                        <span class="section__editFormTextareaText">if you tick the checkbox your ad will have the mark “NOT SEXUAL SEVICE”</span>
                     </div>
                     <button type="submit" class="section__loginBtn section__loginBtn-small section__postAnAd section__postAnAd-step2">
                         Next step
@@ -908,6 +811,6 @@ Post An Ad - Step 2
     const csrf = "";
 </script>
 <script src="static/js/script.js"></script>
-<!-- <script src="static/js/main.js"></script> -->
+<script src="static/js/main.js"></script>
 </body>
 </html>
