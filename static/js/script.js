@@ -171,7 +171,6 @@ function formValidate(selector) {
   form.addEventListener("submit", formSend);
   function formSend(e) {  
     let error = checkInputs(form);
-    console.log(error)
     if (error !== 0) {
       e.preventDefault();    
     } else {
